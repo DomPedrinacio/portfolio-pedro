@@ -23,6 +23,7 @@ function Contact() {
 
                     <a href="https://github.com/DomPedrinacio"
                         target="_blank"
+                        rel="noreferrer"
                         className="social-card">
                         <span className="icon">🐙</span>
                         <div>
