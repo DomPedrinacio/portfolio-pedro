@@ -1,0 +1,45 @@
+/* ================= FOOTER ================= */
+
+.site-footer {
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 40px;
+
+  background: var(--bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Text ===== */
+
+.footer-left p,
+.footer-right p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.25s ease;
+}
+
+.footer-right p:hover,
+.footer-left p:hover {
+  color: var(--accent);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

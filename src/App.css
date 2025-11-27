@@ -1,0 +1,318 @@
+:root {
+  --bg: #000000;
+  --white: #ffffff;
+  --accent: #b78cff;
+  --max-width: 1100px;
+}
+
+/* ---------------------------------------------------- */
+/* BURGER BUTTON (menu mobile)                          */
+/* ---------------------------------------------------- */
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 30;
+  position: relative;
+}
+
+.burger {
+  width: 28px;
+  height: 2px;
+  background: var(--white);
+  display: block;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--white);
+  position: absolute;
+  left: 0;
+  transition: all 0.25s ease;
+}
+
+.burger::before {
+  top: -8px;
+}
+.burger::after {
+  top: 8px;
+}
+
+.burger.open {
+  background: transparent;
+}
+
+.burger.open::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------------------------------------------------- */
+/* Overlay para abrir menu                              */
+/* ---------------------------------------------------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 25;
+}
+
+.overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------------------------------------------------- */
+/* NAV MOBILE                                           */
+/* ---------------------------------------------------- */
+
+.nav {
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.25s;
+}
+
+@media (min-width: 900px) {
+  .nav {
+    transform: none;
+    opacity: 1;
+  }
+  .menu-btn {
+    display: none;
+  }
+  .overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 290px;
+    max-width: 90vw;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.01)
+    );
+    backdrop-filter: blur(6px);
+    box-shadow: -12px 0 24px rgba(0, 0, 0, 0.6);
+    padding: 90px 20px;
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 26;
+  }
+
+  .nav.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Conteúdo principal                                   */
+/* ---------------------------------------------------- */
+
+.main-content {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px;
+  width: 100%;
+}
+
+.container {
+  padding: 8px 12px;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+}
+
+.title-white {
+  color: var(--white);
+}
+
+.title-accent {
+  color: var(--accent);
+}
+
+.lead {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.page-section {
+  padding: 28px 0;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------------------------- */
+/* Home / cards                                         */
+/* ---------------------------------------------------- */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+/* ---------------------------------------------------- */
+/* Projetos                                             */
+/* ---------------------------------------------------- */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---------------------------------------------------- */
+/* Sobre mim                                            */
+/* ---------------------------------------------------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* ---------------------------------------------------- */
+/* Contato                                              */
+/* ---------------------------------------------------- */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--white);
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------- */
+/* Rodapé                                               */
+/* ---------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 14px 0;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left p,
+.footer-right p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Toques visuais                                       */
+/* ---------------------------------------------------- */
+
+h1 span,
+h2 span {
+  display: inline-block;
+}
+
+/* Foco acessível */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px dashed var(--accent);
+  outline-offset: 3px;
+}
