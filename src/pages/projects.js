@@ -34,8 +34,8 @@ function Projects() {
             <div className="container">
 
                 <h2 className="section-title">
-                    <span className="title-white">My</span>
-                    <span className="title-accent"> Projects</span>
+                    <span className="title-white">Meus</span>
+                    <span className="title-accent"> Projetos</span>
                 </h2>
 
                 <div className="projects-grid">
@@ -59,7 +59,7 @@ function Projects() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        Live
+                                        Ver
                                     </a>
                                 )}
 
