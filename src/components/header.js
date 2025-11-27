@@ -24,9 +24,9 @@ function Header() {
                 <nav className={`nav ${open ? 'open' : ''}`} aria-hidden={!open && window.innerWidth < 900}>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/projects">Projects</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/about">Sobre</Link></li>
+                        <li><Link to="/projects">Projetos</Link></li>
+                        <li><Link to="/contact">Contatos</Link></li>
                     </ul>
                 </nav>
 

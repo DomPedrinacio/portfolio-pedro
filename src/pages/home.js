@@ -53,7 +53,7 @@ function Home() {
                         <div className="card">
                             <h3>📌 Sobre Mim</h3>
                             <p>
-                                Minha trajetória inclui estágio como front-end, freelas e
+                                Minha trajetória inclui estágio como front-end, freelancers e
                                 desenvolvimento de sistemas completos em produção.
                             </p>
                         </div>
