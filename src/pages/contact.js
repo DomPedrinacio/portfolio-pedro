@@ -34,6 +34,7 @@ function Contact() {
 
                     <a href="https://www.linkedin.com/in/pedro-augusto-576470236/"
                         target="_blank"
+                        rel="noreferrer"
                         className="social-card">
                         <span className="icon">💼</span>
                         <div>
@@ -44,6 +45,7 @@ function Contact() {
 
                     <a href="https://wa.me/5531984400167"
                         target="_blank"
+                        rel="noreferrer"
                         className="social-card">
                         <span className="icon">📱</span>
                         <div>
@@ -53,6 +55,7 @@ function Contact() {
 
                     <a href="https://www.instagram.com/dompedrinacio?igsh=MTJ4am8waXB1MHcw&utm_source=qr"
                         target="_blank"
+                        rel="noreferrer"
                         className="social-card">
                         <span className="icon">📸</span>
                         <div>
