@@ -23,7 +23,7 @@ const projects = [
         title: "Ioasys Books",
         desc: "Um projeto de aplicativo de livros desenvolvido com React Js, que consome a API pública do Ioasys Books para exibir uma coleção diversificada de livros.",
         tech: ["React", "JavaScript", "CSS"],
-        link: "https://https://desafiofrontendioasys.netlify.app/login",
+        link: "https://desafiofrontendioasys.netlify.app/login",
         repo: "#"
     }
 ];
