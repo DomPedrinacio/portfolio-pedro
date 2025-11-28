@@ -1,0 +1,71 @@
+.loadingScreen {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* a tela inteira some após a animação */
+  animation: fadeOutScreen 0.8s ease forwards;
+  animation-delay: 2.2s;
+}
+
+.pedroDev {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+
+  /* texto aparece suavemente */
+  animation: textAppear 1.2s ease forwards;
+}
+
+.logoGlow {
+  color: #b78cff;
+
+  /* brilho suave premium */
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.frontEnd {
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+
+  /* texto aparece suavemente */
+  animation: textAppear 1.2s ease forwards;
+}
+
+/* ====== ANIMAÇÕES ====== */
+
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #b78cff55;
+  }
+  100% {
+    text-shadow: 0 0 20px #b78cffaa;
+  }
+}
+
+@keyframes fadeOutScreen {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

@@ -1,15 +1,26 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Header from './components/header'
-import Footer from './components/footer'
-import Home from './pages/home'
-import About from './pages/about'
-import Projects from './pages/projects'
-import Contact from './pages/contact'
-
+import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/header';
+import Footer from './components/footer';
+import Home from './pages/home';
+import About from './pages/about';
+import Projects from './pages/projects';
+import Contact from './pages/contact';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
-  return (
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Tempo da animação (ex: 2.5s)
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+  }, []);
+
+  return loading ? (
+    <LoadingScreen />
+  ) : (
     <div className="page">
       <Header />
       <main className="main-content">
@@ -22,7 +33,7 @@ function App() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default App;
