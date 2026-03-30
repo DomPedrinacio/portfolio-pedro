@@ -24,6 +24,25 @@ function About() {
                     frameworks novos e toco violão nas horas vagas.
                 </p>
 
+                {/* ==== TECNOLOGIAS ==== */}
+                <h3 className="sub">Tecnologias</h3>
+
+                <div className="tech-icons">
+
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" />
+
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
+
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+
+                </div>
+
                 {/* ==== TRILHA PROFISSIONAL ==== */}
                 <h3 className="sub">Trilha Profissional</h3>
 
@@ -42,7 +61,7 @@ function About() {
                     <div className="timeline-item">
                         <div className="timeline-left">DAKMARK — Estágio — Front-End</div>
                         <div className="timeline-center">
-                            <span className="timeline-date">2022 - 20223</span>
+                            <span className="timeline-date">2022 - 2023</span>
                         </div>
                         <div className="timeline-right">
                             Desenvolvimento de uma dashboard financeira completa usando HTML, CSS, JS, Python e integração com XLSX.

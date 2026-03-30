@@ -21,7 +21,10 @@ const projects = [
     {
         id: 4,
         title: "Ioasys Books",
-        desc: "Um projeto de aplicativo de livros desenvolvido com React Js, que consome a API pública do Ioasys Books para exibir uma coleção diversificada de livros.",
+        desc: `Um projeto de aplicativo de livros desenvolvido com React Js, que consome a API pública do Ioasys Books para exibir uma coleção diversificada de livros.
+
+        Login: books@ioasys.com.br
+        Senha: ioasysBooks2024`,
         tech: ["React", "JavaScript", "CSS"],
         link: "https://desafiofrontendioasys.netlify.app",
         repo: "#"
@@ -43,7 +46,9 @@ function Projects() {
                         <article key={p.id} className="project-card">
 
                             <h3 className="project-title">{p.title}</h3>
-                            <p className="project-desc">{p.desc}</p>
+                            <p className="project-desc" style={{ whiteSpace: "pre-line" }}>
+                                {p.desc}
+                            </p>
 
                             <ul className="project-tech">
                                 {p.tech.map(t => (

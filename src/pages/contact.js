@@ -8,8 +8,8 @@ function Contact() {
 
                 {/* Título */}
                 <h2 className="section-title">
-                    <span className="title-white">Get</span>
-                    <span className="title-accent"> In Touch</span>
+                    <span className="title-white">Entre</span>
+                    <span className="title-accent"> em contato</span>
                 </h2>
 
                 {/* Subtítulo */}

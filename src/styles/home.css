@@ -45,6 +45,12 @@ body {
   padding: 0 20px;
 }
 
+.img-react{
+  width: 300px;
+  margin-bottom: 35px;
+  border-radius: 10px;
+}
+
 /* ===== TITULO ===== */
 
 .home .title {

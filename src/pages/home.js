@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/home.css'
-import PEDRO from '../img/perfil-pedro.jpg'
+import PEDRO from '../img/pedro-perfil-CM.png'
+import IMGRCT from '../img/React.png'
 
 function Home() {
     return (

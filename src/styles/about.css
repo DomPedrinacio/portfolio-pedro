@@ -17,6 +17,29 @@
   color: #ffffff;
 }
 
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-icons img {
+  width: 40px;
+  height: 40px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
 /* ===== TIMELINE ===== */
 .timeline {
   display: flex;
