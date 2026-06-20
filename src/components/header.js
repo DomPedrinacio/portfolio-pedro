@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import '../styles/header.css'
 
-
 function Header() {
     const [open, setOpen] = useState(false)
     const location = useLocation()
@@ -10,7 +9,6 @@ function Header() {
     useEffect(() => {
         setOpen(false)
     }, [location.pathname])
-
 
     return (
         <header className="site-header">
@@ -20,27 +18,30 @@ function Header() {
                     <span className="logo-accent">Dev</span>
                 </Link>
 
-
-                <nav className={`nav ${open ? 'open' : ''}`} aria-hidden={!open && window.innerWidth < 900}>
+                <nav className={`nav${open ? ' open' : ''}`}>
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">Sobre</Link></li>
                         <li><Link to="/projects">Projetos</Link></li>
-                        <li><Link to="/contact">Contatos</Link></li>
+                        <li><Link to="/contact">Contato</Link></li>
                     </ul>
                 </nav>
 
-
-                <button className="menu-btn" aria-label="menu" onClick={() => setOpen(v => !v)}>
-                    <span className={`burger ${open ? 'open' : ''}`}></span>
+                <button
+                    className="menu-btn"
+                    aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+                    onClick={() => setOpen(v => !v)}
+                >
+                    <span className={`burger${open ? ' open' : ''}`} />
                 </button>
             </div>
 
-
-            {/* translucent overlay only on mobile when menu is open */}
-            <div className={`overlay ${open ? 'visible' : ''}`} onClick={() => setOpen(false)}></div>
+            <div
+                className={`overlay${open ? ' visible' : ''}`}
+                onClick={() => setOpen(false)}
+            />
         </header>
     )
 }
 
-export default Header;
+export default Header

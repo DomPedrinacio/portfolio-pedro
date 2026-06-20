@@ -1,91 +1,102 @@
-import React from 'react';
-import '../styles/projects.css';
+import React from 'react'
+import '../styles/projects.css'
 
 const projects = [
     {
+        id: 0,
+        title: "FinanZen",
+        featured: true,
+        desc: "Plataforma SaaS de gestão financeira inteligente com dashboard em tempo real, controle de receitas, despesas e dívidas, assistente de IA por voz e texto (ZEN), sistema de assinaturas e painel admin completo.",
+        tech: ["React", "TypeScript", "Node.js", "MySQL", "AI / Groq"],
+        link: "https://finanzen-xmwi.vercel.app",
+        repo: null,
+    },
+    {
         id: 1,
         title: "Dev's Systems",
-        desc: "Portfólio da Dev's Systems, empresa de desenvolvimento web focada em soluções personalizadas. Desenvolvido com foco em design moderno, responsividade e clareza na apresentação dos serviços.",
-        tech: ["React", "CSS", "JavaScript", "Python"],
+        featured: false,
+        desc: "Portfólio da Dev's Systems, empresa de desenvolvimento web focada em soluções personalizadas. Design moderno, responsivo e focado na apresentação dos serviços.",
+        tech: ["React", "CSS", "JavaScript"],
         link: "https://devssystems.netlify.app/",
-        repo: "#"
+        repo: null,
+    },
+    {
+        id: 2,
+        title: "Barbearia Lopes SaaS",
+        featured: false,
+        desc: "Sistema completo de gestão para barbearia com agendamento de clientes, controle de caixa e dashboard administrativo. Desenvolvido em duas versões com stack atualizado.",
+        tech: ["React", "Python", "MySQL"],
+        link: null,
+        repo: "https://github.com/DevSystemSs/lopes-barber-master",
     },
     {
         id: 3,
-        title: "Barbearia Lopes SAAS",
-        desc: "Escrita moderna do sistema com React no front-end e backend Python otimizado.",
-        tech: ["React", "Python", "MySQL"],
-        link: "https://github.com/DevSystemSs/lopes-barber-master",
-        repo: "#"
-    },
-    {
-        id: 4,
         title: "Ioasys Books",
-        desc: `Um projeto de aplicativo de livros desenvolvido com React Js, que consome a API pública do Ioasys Books para exibir uma coleção diversificada de livros.
-
-        Login: books@ioasys.com.br
-        Senha: ioasysBooks2024`,
+        featured: false,
+        desc: "Aplicativo de livros com autenticação, busca avançada e coleção diversificada, consumindo a API pública da Ioasys. Login: books@ioasys.com.br · Senha: ioasysBooks2024",
         tech: ["React", "JavaScript", "CSS"],
         link: "https://desafiofrontendioasys.netlify.app",
-        repo: "#"
-    }
-];
+        repo: null,
+    },
+]
 
 function Projects() {
     return (
-        <section className="page-section projects">
-            <div className="container">
+        <section className="projects">
+            <h2 className="section-title">
+                <span className="title-white">Meus</span>
+                <span className="title-accent"> Projetos</span>
+            </h2>
+            <p className="projects-subtitle">
+                Uma seleção dos sistemas que desenvolvi — de SaaS a apps de IA.
+            </p>
 
-                <h2 className="section-title">
-                    <span className="title-white">Meus</span>
-                    <span className="title-accent"> Projetos</span>
-                </h2>
+            <div className="projects-grid">
+                {projects.map(p => (
+                    <article
+                        key={p.id}
+                        className={`project-card${p.featured ? ' featured' : ''}`}
+                    >
+                        {p.featured && (
+                            <span className="featured-badge">⭐ Em Destaque</span>
+                        )}
 
-                <div className="projects-grid">
-                    {projects.map(p => (
-                        <article key={p.id} className="project-card">
+                        <h3 className="project-title">{p.title}</h3>
+                        <p className="project-desc">{p.desc}</p>
 
-                            <h3 className="project-title">{p.title}</h3>
-                            <p className="project-desc" style={{ whiteSpace: "pre-line" }}>
-                                {p.desc}
-                            </p>
+                        <ul className="project-tech">
+                            {p.tech.map(t => (
+                                <li key={t}>{t}</li>
+                            ))}
+                        </ul>
 
-                            <ul className="project-tech">
-                                {p.tech.map(t => (
-                                    <li key={t}>{t}</li>
-                                ))}
-                            </ul>
-
-                            <div className="project-actions">
-                                {p.link && p.link !== "#" && (
-                                    <a
-                                        className="project-link"
-                                        href={p.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Ver
-                                    </a>
-                                )}
-
-                                {p.repo && p.repo !== "#" && (
-                                    <a
-                                        className="project-link repo"
-                                        href={p.repo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Code
-                                    </a>
-                                )}
-                            </div>
-
-                        </article>
-                    ))}
-                </div>
+                        <div className="project-actions">
+                            {p.link && (
+                                <a
+                                    className="project-link primary"
+                                    href={p.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Ver projeto →
+                                </a>
+                            )}
+                            {p.repo && (
+                                <a
+                                    className="project-link secondary"
+                                    href={p.repo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                </a>
+                            )}
+                        </div>
+                    </article>
+                ))}
             </div>
         </section>
-    );
+    )
 }
 
-export default Projects;
+export default Projects

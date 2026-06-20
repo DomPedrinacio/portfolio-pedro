@@ -1,81 +1,162 @@
-/* ===== PROJECTS PAGE ===== */
+/* ══════════════════════════════════════════
+   PROJECTS PAGE
+══════════════════════════════════════════ */
 
 .projects {
-  padding: 60px 0;
+  padding: 48px 0 64px;
   color: var(--white);
 }
 
-/* Título */
-.projects .section-title {
-  font-size: 2rem;
-  margin-bottom: 22px;
+.projects-subtitle {
+  font-size: 1rem;
+  color: var(--text-soft);
+  margin: 0 0 40px;
+  line-height: 1.6;
 }
 
-.projects .title-white {
-  color: var(--white);
-}
+/* ── Grid ────────────────────────────────── */
 
-.projects .title-accent {
-  color: var(--accent);
-}
-
-/* Grid */
 .projects-grid {
-  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 26px;
+  gap: 22px;
 }
 
-/* Cards */
+/* Featured card spans full width */
+.project-card.featured {
+  grid-column: 1 / -1;
+}
+
+/* ── Card ────────────────────────────────── */
+
 .project-card {
+  position: relative;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  padding: 22px;
-  transition: 0.25s ease;
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 0 14px rgba(178, 107, 255, 0.25);
+  border-color: rgba(168, 85, 247, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 12px 40px rgba(168, 85, 247, 0.12);
 }
 
-/* Título do projeto */
-.project-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-  color: var(--white);
+.project-card.featured {
+  border-color: rgba(168, 85, 247, 0.25);
+  background: rgba(168, 85, 247, 0.05);
 }
 
-/* Descrição */
-.project-card p {
-  color: var(--text-soft);
-  margin-bottom: 14px;
-  line-height: 1.5;
+.project-card.featured:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 12px 48px rgba(168, 85, 247, 0.2);
 }
 
-/* Link */
-.project-link {
+/* ── Featured badge ──────────────────────── */
+
+.featured-badge {
   display: inline-block;
+  padding: 4px 12px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--accent);
+  margin-bottom: 14px;
+  letter-spacing: 0.03em;
+}
+
+/* ── Card content ────────────────────────── */
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 10px;
+}
+
+.project-desc {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+/* ── Tech tags ───────────────────────────── */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+}
+
+.project-tech li {
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+}
+
+/* ── Actions ─────────────────────────────── */
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  border-radius: 9px;
+  font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.25s ease;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
 }
 
-.project-link:hover {
-  opacity: 0.8;
+.project-link.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  color: #fff;
+  box-shadow: 0 4px 16px var(--accent-glow);
 }
 
-/* ===== RESPONSIVO ===== */
+.project-link.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4);
+}
+
+.project-link.secondary {
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid var(--glass-border);
+}
+
+.project-link.secondary:hover {
+  border-color: var(--accent);
+  color: var(--white);
+  background: var(--glass-bg);
+}
+
+/* ── Responsive ──────────────────────────── */
+
 @media (max-width: 700px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects .section-title {
-    font-size: 1.7rem;
-  }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: auto; }
 }

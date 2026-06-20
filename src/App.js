@@ -12,23 +12,21 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Tempo da animação (ex: 2.5s)
-    setTimeout(() => {
-      setLoading(false);
-    }, 2500);
+    const t = setTimeout(() => setLoading(false), 2500);
+    return () => clearTimeout(t);
   }, []);
 
-  return loading ? (
-    <LoadingScreen />
-  ) : (
+  if (loading) return <LoadingScreen />;
+
+  return (
     <div className="page">
       <Header />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/"         element={<Home />} />
+          <Route path="/about"    element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact"  element={<Contact />} />
         </Routes>
       </main>
       <Footer />

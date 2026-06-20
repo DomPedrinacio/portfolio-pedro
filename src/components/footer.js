@@ -1,20 +1,26 @@
 import React from 'react'
-import '../styles/footer.css';
-
+import '../styles/footer.css'
 
 function Footer() {
     return (
         <footer className="site-footer">
             <div className="footer-inner">
-                <div className="footer-left">
-                    <p>© {new Date().getFullYear()} Pedro Campos</p>
-                </div>
-                <div className="footer-right">
-                    <p>Built with React — Front-end focused</p>
-                </div>
+                <p className="footer-left">
+                    © {new Date().getFullYear()} Pedro Campos
+                </p>
+                <p className="footer-right">
+                    Built with React &amp;{' '}
+                    <a
+                        href="https://finanzen-xmwi.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        FinanZen
+                    </a>
+                </p>
             </div>
         </footer>
     )
 }
 
-export default Footer;
+export default Footer

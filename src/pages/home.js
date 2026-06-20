@@ -1,76 +1,106 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/home.css'
 import PEDRO from '../img/pedro-perfil-CM.png'
 
+const FINANZEN_URL = 'https://finanzen-xmwi.vercel.app'
+
 function Home() {
     return (
-        <section className="page-section home">
-            <div className="container home-wrapper">
+        <section className="home">
+            <div className="orb orb-1" aria-hidden="true" />
+            <div className="orb orb-2" aria-hidden="true" />
 
-                {/* FOTO */}
-                <div className="profile-box">
-                    <img
-                        src={PEDRO}
-                        alt="Pedro Campos"
-                        className="profile-photo"
-                    />
-                </div>
+            {/* ── HERO ── */}
+            <div className="hero">
+                <div className="hero-text">
+                    <span className="badge">
+                        <span className="badge-dot" />
+                        Disponível para projetos
+                    </span>
 
-                {/* TEXTO PRINCIPAL */}
-                <div className="home-content">
-
-                    <h1 className="title">
-                        <span className="title-white">Pedro Campos</span>
-                        <span className="title-accent"> — Front-end Developer</span>
+                    <h1 className="hero-title">
+                        <a
+                            href={FINANZEN_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="name-link"
+                        >
+                            Pedro Campos
+                        </a>
                     </h1>
 
-                    <p className="lead">
-                        Desenvolvedor front-end focado em criar interfaces acessíveis, rápidas
-                        e intuitivas. Apaixonado por tecnologia, segurança da informação,
-                        games estilo Souls Like e música — sempre buscando aprender algo novo.
+                    <p className="hero-role">Full-stack Developer</p>
+
+                    <p className="hero-bio">
+                        Desenvolvedor focado em criar interfaces acessíveis, rápidas e
+                        intuitivas. Apaixonado por tecnologia, segurança da informação,
+                        games estilo Souls Like e música.
                     </p>
 
-                    {/* GRID DE SPOILERS */}
-                    <div className="home-grid">
-
-                        <div className="card">
-                            <h3>✨ Habilidades</h3>
-                            <ul>
-                                <li>React.js & Componentização</li>
-                                <li>HTML / CSS / UI Responsiva</li>
-                                <li>Python & Integrações</li>
-                            </ul>
-                        </div>
-
-                        <div className="card">
-                            <h3>🧩 Projetos</h3>
-                            <p>
-                                Sistemas SaaS, dashboards, landing pages e aplicações para
-                                clientes reais — incluindo minha microempresa Devs Systems.
-                            </p>
-                        </div>
-
-                        <div className="card">
-                            <h3>📌 Sobre Mim</h3>
-                            <p>
-                                Minha trajetória inclui estágio como front-end, freelancers e
-                                desenvolvimento de sistemas completos em produção.
-                            </p>
-                        </div>
-
-                        <div className="card">
-                            <h3>📨 Contato</h3>
-                            <p>
-                                Fique à vontade para falar comigo — estou sempre aberto a
-                                ideias, projetos e colaborações.
-                            </p>
-                        </div>
-
+                    <div className="hero-actions">
+                        <Link to="/projects" className="btn-primary">Ver Projetos</Link>
+                        <Link to="/contact" className="btn-outline">Entrar em Contato</Link>
                     </div>
+                </div>
+
+                <div className="hero-photo-wrap">
+                    <a
+                        href={FINANZEN_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="photo-link"
+                        title="Ver FinanZen — meu projeto em destaque"
+                    >
+                        <div className="photo-ring">
+                            <img
+                                src={PEDRO}
+                                alt="Pedro Campos"
+                                className="hero-photo"
+                            />
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            {/* ── INFO CARDS ── */}
+            <div className="info-grid">
+                <div className="info-card">
+                    <h3>✨ Habilidades</h3>
+                    <ul>
+                        <li>React &amp; TypeScript</li>
+                        <li>Node.js &amp; APIs REST</li>
+                        <li>HTML / CSS responsivo</li>
+                        <li>Python &amp; Integrações</li>
+                    </ul>
+                </div>
+
+                <div className="info-card">
+                    <h3>🚀 Projetos</h3>
+                    <p>
+                        Sistemas SaaS, dashboards financeiros, apps com IA e landing
+                        pages para clientes reais.
+                    </p>
+                </div>
+
+                <div className="info-card">
+                    <h3>📌 Sobre Mim</h3>
+                    <p>
+                        Estágio, freelancers e sistemas completos em produção. CEO da
+                        microempresa Devs Systems desde 2023.
+                    </p>
+                </div>
+
+                <div className="info-card">
+                    <h3>📨 Contato</h3>
+                    <p>
+                        Sempre aberto a ideias, parcerias e novos projetos. Vamos criar
+                        algo juntos?
+                    </p>
                 </div>
             </div>
         </section>
     )
 }
 
-export default Home;
+export default Home
